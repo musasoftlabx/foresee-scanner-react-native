@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "strict": true,
+    "experimentalDecorators": true,
+    "jsxImportSource": "react-jsx"
+  },
+  "include": ["global.d.ts"],
+  "exclude": ["node_modules"]
+}
