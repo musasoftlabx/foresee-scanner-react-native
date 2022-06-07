@@ -233,6 +233,16 @@ const ScanProduct = ({navigation, route}) => {
           value={barcode}
         />
 
+        <Text
+          style={{
+            color: 'rgba(0, 0, 0, 0.5)',
+            fontFamily: 'Rubik-Regular',
+            fontSize: RFPercentage(2),
+            textAlign: 'right',
+          }}>
+          {barcode.length} character{barcode.length !== 1 && 's'}
+        </Text>
+
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
           <Button
             color="#FF4E50"
@@ -253,7 +263,8 @@ const ScanProduct = ({navigation, route}) => {
             }}
             style={{
               borderRadius: 10,
-              elevation: loading || count === 0 ? 0 : 10,
+              elevation:
+                loading || barcode.length !== 13 || count === 0 ? 0 : 10,
               margin: 18,
               marginRight: 20,
               padding: 8,
@@ -262,7 +273,7 @@ const ScanProduct = ({navigation, route}) => {
           </Button>
           <Button
             color="#71B280"
-            disabled={loading || count === 0}
+            disabled={loading || barcode.length !== 13 || count === 0}
             labelStyle={{
               color: 'rgba(255, 255, 255, 0.8)',
               fontFamily: 'Rubik-Bold',
@@ -279,7 +290,8 @@ const ScanProduct = ({navigation, route}) => {
             }}
             style={{
               borderRadius: 10,
-              elevation: loading || count === 0 ? 0 : 10,
+              elevation:
+                loading || barcode.length !== 13 || count === 0 ? 0 : 10,
               margin: 18,
               marginLeft: 20,
               paddingVertical: 8,
