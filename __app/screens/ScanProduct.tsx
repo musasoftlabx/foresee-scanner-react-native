@@ -273,7 +273,7 @@ const ScanProduct = ({navigation, route}) => {
           </Button>
           <Button
             color="#71B280"
-            disabled={loading || barcode.length !== 13 || count === 0}
+            disabled={loading || count === 0}
             labelStyle={{
               color: 'rgba(255, 255, 255, 0.8)',
               fontFamily: 'Rubik-Bold',
